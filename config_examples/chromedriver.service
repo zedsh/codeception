@@ -1,0 +1,13 @@
+[Unit]
+Description=ChromeDriver Webdriver
+After=syslog.target
+
+[Service]
+#Environment=QT_QPA_PLATFORM=offscreen
+User=chromedriver
+ExecStart=/usr/bin/nohup /usr/bin/chromedriver --url-base=/wd/hub &
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
+
